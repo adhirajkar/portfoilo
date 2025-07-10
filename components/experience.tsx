@@ -9,10 +9,10 @@ const experiences = [
     company: "Zelthy",
     period: "Aug 2024 - Present",
     responsibilities: [
-      "Developed Newmi Care, a women’s healthcare mobile application for clinic and lab consultation bookings, available on Google Play and the Apple App Store",
-      "Designed and implemented an infinite scrolling pagination table with advanced filtering capabilities for Merck Sharp & Dohme (MSD), allowing efficient serialization and visualization of millions of medicine data records.",
+      "Engineered a mobile healthcare application for women’s clinic and lab consultations (Newmi Care), successfully published on both Google Play and the Apple App Store.",
+      "Implemented an infinite scroll table with advanced filters for efficient browsing and dynamic rendering of large-scale pharmaceutical data for a global healthcare client",
       "Created slots package for the Zango framework at Zelthy, empowering physicians to register and manage their availability seamlessly.",
-      "Built a bilingual website for DKSH Thailand using React, featuring seamless Thai and English language switching with full internationalization support using i8n."
+      "Developed a bilingual corporate website for a leading healthcare distributor in Thailand using React, integrating seamless language switching and full internationalization (i18n) for Thai and English."
     ],
     skills: ["JavaScript", "TypeScript", "React", "React Native", "Tailwind CSS"],
   },
