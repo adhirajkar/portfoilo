@@ -14,7 +14,7 @@ const experiences = [
       "Created slots package for the Zango framework at Zelthy, empowering physicians to register and manage their availability seamlessly.",
       "Developed a bilingual corporate website for a leading healthcare distributor in Thailand using React, integrating seamless language switching and full internationalization (i18n) for Thai and English."
     ],
-    skills: ["JavaScript", "TypeScript", "React", "React Native", "Tailwind CSS"],
+    skills: ["JavaScript", "TypeScript", "React", "React Native", "Tailwind CSS","Framer Motion","Expo","Vite"],
   },
   {
     title: "SDE Intern",
