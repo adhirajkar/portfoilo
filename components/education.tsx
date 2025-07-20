@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 const education = [
   {
-    institution: "Ramaiya Institute of Technology, Bengaluru",
+    institution: "Ramaiah Institute of Technology, Bengaluru",
     degree: "Bachelor of Engineering (B.E.)",
     period: "Aug 2020 - Aug 2024",
     // gpa: "CGPA: 8.71/10",
