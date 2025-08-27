@@ -10,7 +10,7 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 const projects = [
   {
-    title: "ReqSTAT",
+    title: "REQStat",
     description: "Send requests, inspect responses, and debug APIs without the clutter.",
     image: "/screenshots/reqstat.png",
     demoUrl: "https://reqstat.vercel.app",
