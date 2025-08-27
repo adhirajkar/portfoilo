@@ -14,17 +14,15 @@ const skillCategories = [
       { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
       { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
       { name: "Python", icon: <FaPython className="text-blue-500" /> },
-      { name: "C++", icon: <SiCplusplus className="text-blue-600" /> },
     ],
   },
   {
-    title: "Library/Frameworks",
+    title: "Library / Frameworks",
     skills: [
       { name: "React", icon: <FaReact className="text-blue-500" /> },
       { name: "Next.js", icon: <RiNextjsFill className="text-black dark:text-white" /> },
       { name: "React Native", icon: <TbBrandReactNative className="text-blue-500" /> },
       { name: "Express.js", icon: <SiExpress className="text-gray-700" /> },
-      { name: "Puppeteer.js", icon: <SiPuppeteer className="text-green-700" /> },
       { name: "Framer Motion", icon: <SiFramer className="text-purple-500" /> },
       { name: "Tailwind CSS", icon: <RiTailwindCssFill className="text-cyan-400" /> },
       { name: "Zustand", icon: <GiBearFace className="text-green-700" /> }

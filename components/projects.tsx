@@ -6,9 +6,99 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Github, ExternalLink } from "lucide-react"
 import Link from "next/link"
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 const projects = [
+  {
+    title: "ReqSTAT",
+    description: "Send requests, inspect responses, and debug APIs without the clutter.",
+    image: "/screenshots/reqstat.png",
+    demoUrl: "https://reqstat.vercel.app",
+    githubUrl: "https://github.com/adhirajkar/reqstat",
+  },
+  {
+    title: "ClutchMVP",
+    description: "Boilerplate to help developers build MVPs fast and right ⚡️",
+    image: "/screenshots/clutchmvp.png",
+    demoUrl: null,
+    githubUrl: "https://github.com/adhirajkar/clutch-mvp",
+  },
+  // {
+  //   title: "Project 3",
+  //   description: "Description of Project 3",
+  //   image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //   demoUrl: "https://example.com",
+  //   githubUrl: "https://github.com",
+  // },
 ]
+
+const ProjectCard = ({
+  title,
+  description,
+  image,
+  demoUrl,
+  githubUrl,
+}: {
+  title: string;
+  description: string;
+  image: string;
+  demoUrl: string | null;
+  githubUrl: string;
+}) =>{
+  return (
+    <CardContainer className="inter-var w-full">
+    <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border  ">
+      <CardItem
+        translateZ="50"
+        className="text-xl font-bold text-neutral-600 dark:text-white"
+      >
+        {title}
+      </CardItem>
+      <CardItem
+        as="p"
+        translateZ="60"
+        className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+      >
+        {description}
+      </CardItem>
+      <CardItem translateZ="100" className="w-full mt-4">
+        <img
+          src={image}
+          height="1000"
+          width="1000"
+          className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+          alt="thumbnail"
+        />
+      </CardItem>
+      <div className={`flex ${demoUrl?'justify-between':'justify-end'} items-center mt-20`}>
+        {
+          demoUrl && (
+            <CardItem
+            translateZ={20}
+            as="a"
+            href={demoUrl}
+            target="__blank"
+            className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+          >
+            Live →
+          </CardItem>
+          )
+        }
+       
+        <CardItem
+          translateZ={20}
+          as="a"
+          href={githubUrl}
+          target="__blank"
+          className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+        >
+          Github
+        </CardItem>
+      </div>
+    </CardBody>
+  </CardContainer>
+  )
+}
 
 export default function Projects() {
   return (
@@ -21,82 +111,13 @@ export default function Projects() {
       >
         <h2 className="text-3xl font-bold mb-10">Projects</h2>
 
-        {/* <div className="grid gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6">
           {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="grid md:grid-cols-2 gap-6 border rounded-xl overflow-hidden group"
-            >
-              <div className="overflow-hidden relative h-[300px] md:h-full border-b md:border-b-0 md:border-r">
-                <div className="absolute inset-0 overflow-y-auto scrollbar-hide">
-                  <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    width={800}
-                    height={1200}
-                    className="w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-              </div>
-
-              <div className="p-6 space-y-4">
-                <h3 className="text-xl font-bold">{project.title}</h3>
-                <p className="text-muted-foreground">{project.description}</p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, idx) => (
-                    <Badge key={idx} variant="secondary">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-
-                <div className="space-y-2">
-                  <h4 className="font-semibold">Key Features:</h4>
-                  <ul className="list-disc pl-5 space-y-1">
-                    {project.features.map((feature, idx) => (
-                      <li key={idx} className="text-sm">
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="flex gap-3 pt-2">
-                  <Button size="sm">
-                    <Link
-                      href={project.demoUrl}
-                      className="flex items-center"
-                      target="_blank"
-                    >
-                      <ExternalLink className="mr-2 h-4 w-4" /> Live
-                    </Link>
-                  </Button>
-                  {
-                    project.githubUrl && (
-                      <Button size="sm" variant="outline">
-                        <Link
-                          href={project.githubUrl}
-                          className="flex items-center"
-                          target="_blank"
-                        >
-                          <Github className="mr-2 h-4 w-4" /> Code
-                        </Link>
-                      </Button>
-                    )
-                  }
-                </div>
-              </div>
-            </motion.div>
+            <ProjectCard key={index} {...project} />
           ))}
-        </div> */}
-        <div className="flex flex-col items-center justify-center space-y-4 py-8">
-          <p className="text-md text-muted-foreground">Currently brewing new ideas 🤔</p>
         </div>
+       
+       
       </motion.div>
     </section>
   )
