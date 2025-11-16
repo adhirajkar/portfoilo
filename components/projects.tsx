@@ -16,6 +16,13 @@ const projects = [
     demoUrl: "https://reqstat.vercel.app",
     githubUrl: "https://github.com/adhirajkar/reqstat",
   },
+   {
+    title: "Schedula",
+    description: "A simple scheduling tool that syncs with Google Calendar to automate bookings and share availability effortlessly.",
+    image: "/screenshots/schedula.png",
+    demoUrl: "https://schedula-amber.vercel.app/",
+    githubUrl: "https://github.com/adhirajkar/schedula",
+  },
   {
     title: "ClutchMVP",
     description: "Boilerplate to help developers build MVPs fast and right ⚡️",
@@ -23,13 +30,6 @@ const projects = [
     demoUrl: null,
     githubUrl: "https://github.com/adhirajkar/clutch-mvp",
   },
-  // {
-  //   title: "Project 3",
-  //   description: "Description of Project 3",
-  //   image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   demoUrl: "https://example.com",
-  //   githubUrl: "https://github.com",
-  // },
 ]
 
 const ProjectCard = ({
